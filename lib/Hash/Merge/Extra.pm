@@ -131,11 +131,23 @@ Version 0.01
 
     Hash::Merge::specify_behavior(R_OVERRIDE);
 
-    $result = merge($ref1, $ref2);
+    $result = merge($left, $right);
 
 =head1 EXPORT
 
-Nothing is exported by default.
+Nothing is exported.
+
+All behaviors registered in L<Hash::Merge> if used as
+
+    use Hash::Merge::Extra;
+
+Nothing registered if passed empty list:
+
+    use Hash::Merge::Extra qw();
+
+Resister only specified behaviors:
+
+    use Hash::Merge::Extra qw(L_OVERRIDE R_REPLACE);
 
 =head1 BEHAVIORS
 
