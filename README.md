@@ -4,7 +4,7 @@ Hash::Merge::Extra - Collection of extra behaviors for [Hash::Merge](https://met
 
 # VERSION
 
-Version 0.01
+Version 0.02
 
 # SYNOPSIS
 
@@ -27,15 +27,19 @@ Nothing registered if passed empty list:
 
     use Hash::Merge::Extra qw();
 
-Resister only specified behaviors:
+Only specified behaviors registered if list defined:
 
     use Hash::Merge::Extra qw(L_OVERRIDE R_REPLACE);
 
 # BEHAVIORS
 
+- L\_ADDITIVE, R\_ADDITIVE
+
+    Hashes merged, arrays joined, scalars overrided if undefined. Left and right precedence.
+
 - L\_OVERRIDE, R\_OVERRIDE
 
-    Merge hashes, override arrays and scalars. Left and right precedence
+    Merge hashes, override arrays and scalars. Left and right precedence.
 
 - L\_REPLACE, R\_REPLACE
 
