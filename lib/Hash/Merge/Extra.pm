@@ -9,9 +9,9 @@ our $VERSION = '0.02'; # Don't forget to change in pod below
 
 use constant L_ADDITIVE => {
     'SCALAR' => {
-        'SCALAR' => sub { $_[0] // $_[1] },
-        'ARRAY'  => sub { $_[0] // $_[1] },
-        'HASH'   => sub { $_[0] // $_[1] },
+        'SCALAR' => sub { defined $_[0] ? $_[0] : $_[1] },
+        'ARRAY'  => sub { defined $_[0] ? $_[0] : $_[1] },
+        'HASH'   => sub { defined $_[0] ? $_[0] : $_[1] },
     },
     'ARRAY' => {
         'SCALAR' => sub { $_[0] },
@@ -27,17 +27,17 @@ use constant L_ADDITIVE => {
 
 use constant R_ADDITIVE => {
     'SCALAR' => {
-        'SCALAR' => sub { $_[1] // $_[0] },
-        'ARRAY'  => sub { $_[1] // $_[0] },
-        'HASH'   => sub { $_[1] // $_[0] },
+        'SCALAR' => sub { defined $_[1] ? $_[1] : $_[0] },
+        'ARRAY'  => sub { $_[1] },
+        'HASH'   => sub { $_[1] },
     },
     'ARRAY' => {
-        'SCALAR' => sub { $_[1] },
+        'SCALAR' => sub { defined $_[1] ? $_[1] : $_[0] },
         'ARRAY'  => sub { [ @{$_[1]}, @{$_[0]} ] },
         'HASH'   => sub { $_[1] },
     },
     'HASH' => {
-        'SCALAR' => sub { $_[1] },
+        'SCALAR' => sub { defined $_[1] ? $_[1] : $_[0] },
         'ARRAY'  => sub { $_[1] },
         'HASH'   => sub { _merge_hashes(@_) },
     },
