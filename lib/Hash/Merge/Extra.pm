@@ -116,39 +116,24 @@ use constant R_REPLACE => {
 };
 
 my %INDEX = (
-    ADDITIVE => {
-        L_ADDITIVE => L_ADDITIVE,
-        R_ADDITIVE => R_ADDITIVE
-    },
-    OVERRIDE => {
-        L_OVERRIDE => L_OVERRIDE,
-        R_OVERRIDE => R_OVERRIDE
-    },
-    REPLACE => {
-        L_REPLACE => L_REPLACE,
-        R_REPLACE => R_REPLACE
-    },
+    L_ADDITIVE      => L_ADDITIVE,
+    L_OVERRIDE      => L_OVERRIDE,
+    L_REPLACE       => L_REPLACE,
+
+    R_ADDITIVE      => R_ADDITIVE,
+    R_OVERRIDE      => R_OVERRIDE,
+    R_REPLACE       => R_REPLACE,
 );
 
 sub import {
     shift; # throw off package name
 
-    my %req = map { $_ => 1 } @_;
-    my %done;
-
-    while (my ($grp, $behs) = each %INDEX) {
-        while (my ($k, $v) = each %{$behs}) {
-            next if (keys %req and not exists $req{$k});
-            Hash::Merge::specify_behavior($v, $k);
-            $done{$k}++;
-        }
-    }
-
-    for (keys %req) {
-        unless (exists $done{$_}) {
+    for (@_ ? @_ : keys %INDEX) {
+        unless (exists $INDEX{$_}) {
             require Carp;
             Carp::croak "Unable to register $_ (no such behavior)";
         }
+        Hash::Merge::specify_behavior($INDEX{$_}, $_);
     }
 }
 
