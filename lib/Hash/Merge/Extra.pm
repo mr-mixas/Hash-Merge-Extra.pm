@@ -5,7 +5,7 @@ use warnings FATAL => 'all';
 
 use Hash::Merge qw(_merge_hashes);
 
-our $VERSION = '0.02'; # Don't forget to change in pod below
+our $VERSION = '0.03'; # Don't forget to change in pod below
 
 use constant L_ADDITIVE => {
     'SCALAR' => {
@@ -147,14 +147,14 @@ Hash::Merge::Extra - Collection of extra behaviors for L<Hash::Merge>
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =head1 SYNOPSIS
 
     use Hash::Merge qw(merge);
     use Hash::Merge::Extra;
 
-    Hash::Merge::specify_behavior(R_OVERRIDE);
+    Hash::Merge::set_behavior('R_OVERRIDE');
 
     $result = merge($left, $right);
 

@@ -4,14 +4,14 @@ Hash::Merge::Extra - Collection of extra behaviors for [Hash::Merge](https://met
 
 # VERSION
 
-Version 0.02
+Version 0.03
 
 # SYNOPSIS
 
     use Hash::Merge qw(merge);
     use Hash::Merge::Extra;
 
-    Hash::Merge::specify_behavior(R_OVERRIDE);
+    Hash::Merge::set_behavior('R_OVERRIDE');
 
     $result = merge($left, $right);
 
