@@ -33,17 +33,17 @@ Only specified behaviors registered if list defined:
 
 # BEHAVIORS
 
-- L\_ADDITIVE, R\_ADDITIVE
+- __L\_ADDITIVE__, __R\_ADDITIVE__
 
-    Hashes merged, arrays joined, scalars overrided if undefined. Left and right precedence.
+    Hashes merged, arrays joined, undefined scalars overrided. Left and right precedence.
 
-- L\_OVERRIDE, R\_OVERRIDE
+- __L\_OVERRIDE__, __R\_OVERRIDE__
 
-    Merge hashes, override arrays and scalars. Left and right precedence.
+    Hashes merged, arrays and scalars overrided. Left and right precedence.
 
-- L\_REPLACE, R\_REPLACE
+- __L\_REPLACE__, __R\_REPLACE__
 
-    Don't merge, simply replace one thing by another. Left and right precedence.
+    Nothing merged. One thing simply replaced by another. Left and right precedence.
 
 # SEE ALSO
 
