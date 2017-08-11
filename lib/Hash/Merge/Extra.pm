@@ -178,17 +178,17 @@ Only specified behaviors registered if list defined:
 
 =over 4
 
-=item L_ADDITIVE, R_ADDITIVE
+=item B<L_ADDITIVE>, B<R_ADDITIVE>
 
-Hashes merged, arrays joined, scalars overrided if undefined. Left and right precedence.
+Hashes merged, arrays joined, undefined scalars overrided. Left and right precedence.
 
-=item L_OVERRIDE, R_OVERRIDE
+=item B<L_OVERRIDE>, B<R_OVERRIDE>
 
-Merge hashes, override arrays and scalars. Left and right precedence.
+Hashes merged, arrays and scalars overrided. Left and right precedence.
 
-=item L_REPLACE, R_REPLACE
+=item B<L_REPLACE>, B<R_REPLACE>
 
-Don't merge, simply replace one thing by another. Left and right precedence.
+Nothing merged. One thing simply replaced by another. Left and right precedence.
 
 =back
 
