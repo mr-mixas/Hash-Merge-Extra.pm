@@ -192,6 +192,15 @@ Nothing merged. One thing simply replaced by another. Left and right precedence.
 
 =back
 
+=head1 AUTHOR
+
+Michael Samoglyadov, C<< <mixas at cpan.org> >>
+
+=head1 BUGS
+
+Please report any bugs or feature requests to
+L<https://github.com/mr-mixas/Hash-Merge-Extra.pm/issues>
+
 =head1 SEE ALSO
 
 L<Hash::Merge>

@@ -45,6 +45,15 @@ Only specified behaviors registered if list defined:
 
     Nothing merged. One thing simply replaced by another. Left and right precedence.
 
+# AUTHOR
+
+Michael Samoglyadov, `<mixas at cpan.org>`
+
+# BUGS
+
+Please report any bugs or feature requests to
+[https://github.com/mr-mixas/Hash-Merge-Extra.pm/issues](https://github.com/mr-mixas/Hash-Merge-Extra.pm/issues)
+
 # SEE ALSO
 
 [Hash::Merge](https://metacpan.org/pod/Hash::Merge)
