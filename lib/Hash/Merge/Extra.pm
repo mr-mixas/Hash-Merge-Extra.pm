@@ -5,7 +5,7 @@ use warnings FATAL => 'all';
 
 use Hash::Merge qw(_merge_hashes);
 
-our $VERSION = '0.03'; # Don't forget to change in pod below
+our $VERSION = '0.04'; # Don't forget to change in pod below
 
 use constant L_ADDITIVE => {
     'SCALAR' => {
@@ -145,9 +145,17 @@ __END__
 
 Hash::Merge::Extra - Collection of extra behaviors for L<Hash::Merge>
 
+=begin html
+
+<a href="https://travis-ci.org/mr-mixas/Hash-Merge-Extra.pm"><img src="https://travis-ci.org/mr-mixas/Hash-Merge-Extra.pm.svg?branch=master" alt="Travis CI"/></a>
+<a href='https://coveralls.io/github/mr-mixas/Hash-Merge-Extra.pm?branch=master'><img src='https://coveralls.io/repos/github/mr-mixas/Hash-Merge-Extra.pm/badge.svg?branch=master' alt='Coverage Status'/></a>
+<a href="https://badge.fury.io/pl/Hash-Merge-Extra"><img src="https://badge.fury.io/pl/Hash-Merge-Extra.svg" alt="CPAN version"/></a>
+
+=end html
+
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =head1 SYNOPSIS
 
