@@ -244,7 +244,8 @@ Only specified behaviors registered if list defined:
 
 =item B<L_ADDITIVE>, B<R_ADDITIVE>
 
-Hashes merged, arrays joined, undefined scalars overrided. Left and right precedence.
+Hashes merged, arrays joined, undefined scalars overrided. Left and right
+precedence.
 
 =item B<L_JSON_MERGE_PATCH>, B<R_JSON_MERGE_PATCH>
 
@@ -259,7 +260,8 @@ Hashes merged, arrays and scalars overrided. Left and right precedence.
 
 =item B<L_REPLACE>, B<R_REPLACE>
 
-Nothing merged. One thing simply replaced by another. Left and right precedence.
+Nothing merged. One thing simply replaced by another. Left and right
+precedence.
 
 =back
 
