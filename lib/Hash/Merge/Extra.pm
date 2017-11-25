@@ -43,6 +43,60 @@ use constant R_ADDITIVE => {
     },
 };
 
+use constant L_JSON_MERGE_PATCH => {
+    'SCALAR' => {
+        'SCALAR' => sub { $_[0] },
+        'ARRAY'  => sub { $_[0] },
+        'HASH'   => sub { $_[0] },
+    },
+    'ARRAY' => {
+        'SCALAR' => sub { $_[0] },
+        'ARRAY'  => sub { $_[0] },
+        'HASH'   => sub { $_[0] },
+    },
+    'HASH' => {
+        'SCALAR' => sub { $_[0] },
+        'ARRAY'  => sub { $_[0] },
+        'HASH'   => sub {
+            map {
+                unless (defined $_[0]->{$_}) {
+                    delete $_[1]->{$_};
+                    delete $_[0]->{$_}; # also remove (or will be merged)
+                }
+            } keys %{$_[0]};
+
+            _merge_hashes(@_)
+        },
+    },
+};
+
+use constant R_JSON_MERGE_PATCH => {
+    'SCALAR' => {
+        'SCALAR' => sub { $_[1] },
+        'ARRAY'  => sub { $_[1] },
+        'HASH'   => sub { $_[1] },
+    },
+    'ARRAY' => {
+        'SCALAR' => sub { $_[1] },
+        'ARRAY'  => sub { $_[1] },
+        'HASH'   => sub { $_[1] },
+    },
+    'HASH' => {
+        'SCALAR' => sub { $_[1] },
+        'ARRAY'  => sub { $_[1] },
+        'HASH'   => sub {
+            map {
+                unless (defined $_[1]->{$_}) {
+                    delete $_[0]->{$_};
+                    delete $_[1]->{$_}; # also remove (or will be merged)
+                }
+            } keys %{$_[1]};
+
+            _merge_hashes(@_)
+        },
+    },
+};
+
 use constant L_OVERRIDE => {
     'SCALAR' => {
         'SCALAR' => sub { $_[0] },
@@ -116,13 +170,15 @@ use constant R_REPLACE => {
 };
 
 my %INDEX = (
-    L_ADDITIVE      => L_ADDITIVE,
-    L_OVERRIDE      => L_OVERRIDE,
-    L_REPLACE       => L_REPLACE,
+    L_ADDITIVE              => L_ADDITIVE,
+    L_JSON_MERGE_PATCH      => L_JSON_MERGE_PATCH,
+    L_OVERRIDE              => L_OVERRIDE,
+    L_REPLACE               => L_REPLACE,
 
-    R_ADDITIVE      => R_ADDITIVE,
-    R_OVERRIDE      => R_OVERRIDE,
-    R_REPLACE       => R_REPLACE,
+    R_ADDITIVE              => R_ADDITIVE,
+    R_JSON_MERGE_PATCH      => R_JSON_MERGE_PATCH,
+    R_OVERRIDE              => R_OVERRIDE,
+    R_REPLACE               => R_REPLACE,
 );
 
 sub import {
@@ -189,6 +245,13 @@ Only specified behaviors registered if list defined:
 =item B<L_ADDITIVE>, B<R_ADDITIVE>
 
 Hashes merged, arrays joined, undefined scalars overrided. Left and right precedence.
+
+=item B<L_JSON_MERGE_PATCH>, B<R_JSON_MERGE_PATCH>
+
+JSON Merge Patch (L<rfc7386|https://tools.ietf.org/html/rfc7386>) behavior
+implementation for perl structures. Almost the same as C<L_OVERRIDE> and
+C<R_OVERRIDE>, but hash keys with undef values in the patch cause removal of
+existing keys in the main structure. Left and right precedence.
 
 =item B<L_OVERRIDE>, B<R_OVERRIDE>
 

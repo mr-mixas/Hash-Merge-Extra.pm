@@ -41,6 +41,13 @@ Only specified behaviors registered if list defined:
 
     Hashes merged, arrays joined, undefined scalars overrided. Left and right precedence.
 
+- __L\_JSON\_MERGE\_PATCH__, __R\_JSON\_MERGE\_PATCH__
+
+    JSON Merge Patch ([rfc7386](https://tools.ietf.org/html/rfc7386)) behavior
+    implementation for perl structures. Almost the same as `L_OVERRIDE` and
+    `R_OVERRIDE`, but hash keys with undef values in the patch cause removal of
+    existing keys in the main structure. Left and right precedence.
+
 - __L\_OVERRIDE__, __R\_OVERRIDE__
 
     Hashes merged, arrays and scalars overrided. Left and right precedence.
