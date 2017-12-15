@@ -8,7 +8,7 @@ use Hash::Merge qw(merge);
 use Hash::Merge::Extra;
 
 ok(
-    Hash::Merge::set_behavior('L_JSON_MERGE_PATCH')
+    Hash::Merge::set_behavior('L_MERGE_PATCH')
 ) || BAIL_OUT('Failed to set behavior');
 
 my ($got, @tests);

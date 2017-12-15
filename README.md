@@ -8,7 +8,7 @@ Hash::Merge::Extra - Collection of extra behaviors for [Hash::Merge](https://met
 
 # VERSION
 
-Version 0.04
+Version 0.05
 
 # SYNOPSIS
 
@@ -39,13 +39,14 @@ Only specified behaviors registered if list defined:
 
 - __L\_ADDITIVE__, __R\_ADDITIVE__
 
-    Hashes merged, arrays joined, undefined scalars overrided. Left and right precedence.
+    Hashes merged, arrays joined, undefined scalars overrided. Left and right
+    precedence.
 
-- __L\_JSON\_MERGE\_PATCH__, __R\_JSON\_MERGE\_PATCH__
+- __L\_MERGE\_PATCH__, __R\_MERGE\_PATCH__
 
-    JSON Merge Patch ([rfc7386](https://tools.ietf.org/html/rfc7386)) behavior
-    implementation for perl structures. Almost the same as `L_OVERRIDE` and
-    `R_OVERRIDE`, but hash keys with undef values in the patch cause removal of
+    JSON Merge Patch ([rfc7386](https://tools.ietf.org/html/rfc7386)) patch
+    behavior for perl structures. Almost the same as `L_OVERRIDE` and
+    `R_OVERRIDE`, but hash keys with `undef` values in the patch cause removal of
     existing keys in the main structure. Left and right precedence.
 
 - __L\_OVERRIDE__, __R\_OVERRIDE__
@@ -54,7 +55,8 @@ Only specified behaviors registered if list defined:
 
 - __L\_REPLACE__, __R\_REPLACE__
 
-    Nothing merged. One thing simply replaced by another. Left and right precedence.
+    Nothing merged. One thing simply replaced by another. Left and right
+    precedence.
 
 # AUTHOR
 
