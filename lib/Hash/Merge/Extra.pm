@@ -5,7 +5,7 @@ use warnings FATAL => 'all';
 
 use Hash::Merge qw(_merge_hashes);
 
-our $VERSION = '0.05'; # Don't forget to change in pod below
+our $VERSION = '0.06'; # Don't forget to change in pod below
 
 use constant L_ADDITIVE => {
     'SCALAR' => {
@@ -211,7 +211,7 @@ Hash::Merge::Extra - Collection of extra behaviors for L<Hash::Merge>
 
 =head1 VERSION
 
-Version 0.05
+Version 0.06
 
 =head1 SYNOPSIS
 
@@ -249,7 +249,7 @@ precedence.
 
 =item B<L_MERGE_PATCH>, B<R_MERGE_PATCH>
 
-JSON Merge Patch (L<rfc7386|https://tools.ietf.org/html/rfc7386>) patch
+JSON Merge Patch (L<rfc7396|https://tools.ietf.org/html/rfc7396>) patch
 behavior for perl structures. Almost the same as C<L_OVERRIDE> and
 C<R_OVERRIDE>, but hash keys with C<undef> values in the patch cause removal of
 existing keys in the main structure. Left and right precedence.

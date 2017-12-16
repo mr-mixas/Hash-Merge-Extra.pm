@@ -8,7 +8,7 @@ Hash::Merge::Extra - Collection of extra behaviors for [Hash::Merge](https://met
 
 # VERSION
 
-Version 0.05
+Version 0.06
 
 # SYNOPSIS
 
@@ -44,7 +44,7 @@ Only specified behaviors registered if list defined:
 
 - __L\_MERGE\_PATCH__, __R\_MERGE\_PATCH__
 
-    JSON Merge Patch ([rfc7386](https://tools.ietf.org/html/rfc7386)) patch
+    JSON Merge Patch ([rfc7396](https://tools.ietf.org/html/rfc7396)) patch
     behavior for perl structures. Almost the same as `L_OVERRIDE` and
     `R_OVERRIDE`, but hash keys with `undef` values in the patch cause removal of
     existing keys in the main structure. Left and right precedence.
