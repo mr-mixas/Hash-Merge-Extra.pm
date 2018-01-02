@@ -66,7 +66,7 @@ Please report any bugs or feature requests to
 
 # LICENSE AND COPYRIGHT
 
-Copyright 2017 Michael Samoglyadov.
+Copyright 2017,2018 Michael Samoglyadov.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of either: the GNU General Public License as published
