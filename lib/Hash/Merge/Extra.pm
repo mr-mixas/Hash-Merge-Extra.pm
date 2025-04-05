@@ -188,12 +188,12 @@ Only specified behaviors registered if list defined:
 
 =item B<L_ADDITIVE>, B<R_ADDITIVE>
 
-Hashes merged, arrays joined, undefined scalars overrided. Left and right
+Hashes merged, arrays joined, undefined scalars overridden. Left and right
 precedence.
 
 =item B<L_OVERRIDE>, B<R_OVERRIDE>
 
-Hashes merged, arrays and scalars overrided. Left and right precedence.
+Hashes merged, arrays and scalars overridden. Left and right precedence.
 
 =item B<L_REPLACE>, B<R_REPLACE>
 

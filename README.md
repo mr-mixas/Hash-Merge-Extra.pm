@@ -39,12 +39,12 @@ Only specified behaviors registered if list defined:
 
 - __L\_ADDITIVE__, __R\_ADDITIVE__
 
-    Hashes merged, arrays joined, undefined scalars overrided. Left and right
+    Hashes merged, arrays joined, undefined scalars overridden. Left and right
     precedence.
 
 - __L\_OVERRIDE__, __R\_OVERRIDE__
 
-    Hashes merged, arrays and scalars overrided. Left and right precedence.
+    Hashes merged, arrays and scalars overridden. Left and right precedence.
 
 - __L\_REPLACE__, __R\_REPLACE__
 
