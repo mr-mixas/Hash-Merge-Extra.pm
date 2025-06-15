@@ -1,10 +1,12 @@
 # NAME
 
-Hash::Merge::Extra - Collection of extra behaviors for [Hash::Merge](https://metacpan.org/pod/Hash::Merge)
+Hash::Merge::Extra - Collection of extra behaviors for [Hash::Merge](https://metacpan.org/pod/Hash%3A%3AMerge)
 
-<a href="https://travis-ci.org/mr-mixas/Hash-Merge-Extra.pm"><img src="https://travis-ci.org/mr-mixas/Hash-Merge-Extra.pm.svg?branch=master" alt="Travis CI"/></a>
-<a href='https://coveralls.io/github/mr-mixas/Hash-Merge-Extra.pm?branch=master'><img src='https://coveralls.io/repos/github/mr-mixas/Hash-Merge-Extra.pm/badge.svg?branch=master' alt='Coverage Status'/></a>
-<a href="https://badge.fury.io/pl/Hash-Merge-Extra"><img src="https://badge.fury.io/pl/Hash-Merge-Extra.svg" alt="CPAN version"/></a>
+<div>
+    <a href="https://github.com/mr-mixas/Hash-Merge-Extra.pm/actions?query=branch%3Amaster"><img src="https://github.com/mr-mixas/Hash-Merge-Extra.pm/actions/workflows/test.yaml/badge.svg?branch=master" alt="Tests"/></a>
+    <a href='https://coveralls.io/github/mr-mixas/Hash-Merge-Extra.pm?branch=master'><img src='https://coveralls.io/repos/github/mr-mixas/Hash-Merge-Extra.pm/badge.svg?branch=master' alt='Coverage Status'/></a>
+    <a href="https://badge.fury.io/pl/Hash-Merge-Extra"><img src="https://badge.fury.io/pl/Hash-Merge-Extra.svg" alt="CPAN version"/></a>
+</div>
 
 # VERSION
 
@@ -23,7 +25,7 @@ Version 0.06
 
 Nothing is exported.
 
-All behaviors registered in [Hash::Merge](https://metacpan.org/pod/Hash::Merge) if used as
+All behaviors registered in [Hash::Merge](https://metacpan.org/pod/Hash%3A%3AMerge) if used as
 
     use Hash::Merge::Extra;
 
@@ -37,16 +39,16 @@ Only specified behaviors registered if list defined:
 
 # BEHAVIORS
 
-- __L\_ADDITIVE__, __R\_ADDITIVE__
+- **L\_ADDITIVE**, **R\_ADDITIVE**
 
     Hashes merged, arrays joined, undefined scalars overridden. Left and right
     precedence.
 
-- __L\_OVERRIDE__, __R\_OVERRIDE__
+- **L\_OVERRIDE**, **R\_OVERRIDE**
 
     Hashes merged, arrays and scalars overridden. Left and right precedence.
 
-- __L\_REPLACE__, __R\_REPLACE__
+- **L\_REPLACE**, **R\_REPLACE**
 
     Nothing merged. One thing simply replaced by another. Left and right
     precedence.
@@ -62,7 +64,7 @@ Please report any bugs or feature requests to
 
 # SEE ALSO
 
-[Hash::Merge](https://metacpan.org/pod/Hash::Merge)
+[Hash::Merge](https://metacpan.org/pod/Hash%3A%3AMerge)
 
 # LICENSE AND COPYRIGHT
 
